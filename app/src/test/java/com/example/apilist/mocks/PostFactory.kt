@@ -11,7 +11,7 @@ class PostFactory {
         val id = counter.incrementAndGet()
         return RedditPost(
             title = "title $id",
-            thumbnail = null,
+            thumbnail = "http://fake.fake/image.png",
             url = null
         )
     }

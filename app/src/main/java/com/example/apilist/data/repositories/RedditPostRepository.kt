@@ -26,7 +26,7 @@ class RedditPostRepository(
 
                     //Discussion: higher-order functions
                     mutableLiveData.value = response.data.children.filter {
-                        it.data.thumbnail != "self" && it.data.thumbnail != "nsfw"
+                        it.data.thumbnail?.startsWith("http") == true
                     }.map {
                         it.data
                     }

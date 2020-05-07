@@ -34,15 +34,9 @@ class RedditPostViewHolder(
     fun bind(post: RedditPost?) {
         this.post = post
         title.text = post?.title
-        if (post?.thumbnail?.startsWith("http") == true) {
-            thumbnail.visibility = View.VISIBLE
-            glide.load(post.thumbnail)
-                .centerCrop()
-                .into(thumbnail)
-        } else {
-            thumbnail.visibility = View.GONE
-            glide.clear(thumbnail)
-        }
+        glide.load(post?.thumbnail)
+            .centerCrop()
+            .into(thumbnail)
     }
 
     companion object {
