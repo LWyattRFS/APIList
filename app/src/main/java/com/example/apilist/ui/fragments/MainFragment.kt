@@ -5,27 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.apilist.R
 import com.example.apilist.data.models.RedditPost
-import com.example.apilist.ui.util.ServiceLocator
-import com.example.apilist.ui.util.getViewModel
 import com.example.apilist.ui.adapters.PostsAdapter
-import com.example.apilist.ui.fragments.main.MainViewModel
+import com.example.apilist.ui.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
-    private val viewModel by lazy {
-        getViewModel {
-            MainViewModel(
-                ServiceLocator.instance().getRepository()
-            )
-        }
-    }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {

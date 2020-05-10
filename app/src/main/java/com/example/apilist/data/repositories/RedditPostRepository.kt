@@ -6,7 +6,7 @@ import com.example.apilist.data.models.RedditPost
 import kotlinx.coroutines.*
 import retrofit2.HttpException
 
-class RedditPostRepository(
+class RedditPostRepository (
     private val redditApi: RedditApi
 ) {
     private val mutableLiveData = MutableLiveData<List<RedditPost>>()
@@ -15,7 +15,9 @@ class RedditPostRepository(
 
     fun getMutableLiveData(): MutableLiveData<List<RedditPost>> {
         //Discussion: naive caching
-        if (mutableLiveData.value?.size ?: 0 > 0) return mutableLiveData
+        if (mutableLiveData.value?.size ?: 0 > 0) {
+            return mutableLiveData
+        }
 
         //Discussion: coroutines
         coroutineScope.launch {

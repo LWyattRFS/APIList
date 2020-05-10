@@ -12,7 +12,7 @@ class PostFactory {
         return RedditPost(
             title = "title $id",
             thumbnail = "http://fake.fake/image.png",
-            url = null
+            url = "http://www.google.com/"
         )
     }
 
@@ -22,7 +22,7 @@ class PostFactory {
         return RedditPost(
             title = "title $id",
             thumbnail = "self",
-            url = null
+            url = "http://www.google.com/"
         )
     }
 
@@ -32,7 +32,7 @@ class PostFactory {
         return RedditPost(
             title = "title $id",
             thumbnail = "nsfw",
-            url = null
+            url = "http://www.google.com/"
         )
     }
 }
